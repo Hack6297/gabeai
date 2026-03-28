@@ -54,3 +54,10 @@ use either the recommended server URL (`http://127.0.0.1:8000`) or ensure the re
 - `templates/index.html`: browser chat UI.
 - `static/app.js`: frontend chat client logic.
 - `static/styles.css`: UI styling.
+
+## Checks
+
+```bash
+python -m unittest discover -s tests
+python -m compileall app static templates
+```
