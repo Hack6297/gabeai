@@ -22,8 +22,8 @@ class RepoSanityTests(unittest.TestCase):
 
     def test_frontend_asset_paths_exist(self) -> None:
         html = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
-        self.assertIn("../static/styles.css", html)
-        self.assertIn("../static/app.js", html)
+        self.assertIn("/static/styles.css", html)
+        self.assertIn("/static/app.js", html)
 
         self.assertTrue((ROOT / "static" / "styles.css").exists())
         self.assertTrue((ROOT / "static" / "app.js").exists())

@@ -28,28 +28,18 @@ header h1 { margin-bottom: 0.4rem; }
 header p { color: var(--muted); margin-top: 0; }
 
 .controls {
-  display: grid;
-  grid-template-columns: 90px 1fr;
+  display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
 }
 
-input, select, textarea, button {
+select, textarea, button {
   border-radius: 10px;
   border: 1px solid #2f3a67;
   padding: 0.6rem 0.75rem;
   color: var(--text);
   background: #10162f;
-}
-
-.banner {
-  margin: 0.2rem 0 1rem;
-  border: 1px solid #b18400;
-  border-radius: 10px;
-  background: #3d2f00;
-  color: #ffe58f;
-  padding: 0.6rem 0.75rem;
 }
 
 .chat {
@@ -83,20 +73,9 @@ textarea {
   resize: vertical;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.6rem;
-}
-
 button {
   background: var(--accent);
   border: none;
   font-weight: 700;
   cursor: pointer;
-}
-
-button.ghost {
-  background: transparent;
-  border: 1px solid #2f3a67;
 }

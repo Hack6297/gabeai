@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GabeAI 1.0</title>
-    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <main class="container">
@@ -22,24 +22,14 @@
         </select>
       </section>
 
-      <section class="controls">
-        <label for="api-base">API Base</label>
-        <input id="api-base" type="text" placeholder="http://127.0.0.1:8000" />
-      </section>
-
-      <p id="banner" class="banner" hidden></p>
-
       <section id="chat" class="chat"></section>
 
       <form id="chat-form" class="composer">
         <textarea id="message" placeholder="Ask GabeAI anything..." required></textarea>
-        <div class="buttons">
-          <button type="submit">Send</button>
-          <button type="button" id="clear-chat" class="ghost">Clear</button>
-        </div>
+        <button type="submit">Send</button>
       </form>
     </main>
 
-    <script src="../static/app.js"></script>
+    <script src="/static/app.js"></script>
   </body>
 </html>
