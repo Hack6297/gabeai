@@ -4,13 +4,13 @@ A local three-mode assistant prototype built with **PyTorch + FastAPI + HTML**.
 
 ## Modes
 
-- **Lite**: optimized for speed and short outputs (Haiku-style profile)
-- **Plus**: balanced quality and speed (Sonnet-style profile)
-- **Pro**: deeper and more structured reasoning (Opus-style profile)
+- **Lite**: optimized for speed and short outputs (Haiku-style profile).
+- **Plus**: balanced quality and speed (Sonnet-style profile).
+- **Pro**: deeper and more structured reasoning (Opus-style profile).
 
-> This project provides a practical local architecture and UX for multi-tier intelligence profiles. It is not a literal replication of proprietary frontier systems.
+> This project is a local prototype with mode-based behavior. It is not a literal reproduction of proprietary frontier models.
 
-## Run locally (recommended)
+## Quick Start (recommended)
 
 ```bash
 python -m venv .venv
@@ -19,33 +19,35 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Open `http://127.0.0.1:8000`.
+Open: `http://127.0.0.1:8000`
 
-## If you open `templates/index.html` directly
+## Running from `file://` (optional)
 
-Direct `file://` opens are supported now, but you must keep the repo structure intact and provide an API base URL in the UI (default: `http://127.0.0.1:8000`).
+You can open `templates/index.html` directly from disk, but the frontend still needs a running backend API.
 
-If you see browser errors like:
+1. Start FastAPI (`uvicorn app.main:app --reload`).
+2. Open `templates/index.html`.
+3. In the UI, set **API Base** to `http://127.0.0.1:8000`.
+
+If you see these errors:
 - `Failed to load resource: net::ERR_FILE_NOT_FOUND`
 - `Unsafe attempt to load URL file:///...`
 
-then either:
-1. Start the FastAPI server and open `http://127.0.0.1:8000`, or
-2. Open `templates/index.html` from disk and set **API Base** to your running backend.
+use either the recommended server URL (`http://127.0.0.1:8000`) or ensure the repo structure is intact and API Base is set.
 
 ## API
 
-`POST /api/chat`
+### `POST /api/chat`
 
 ```json
 {
   "message": "Build a startup plan",
   "mode": "pro",
-  "history": [{"role":"user","content":"Hi"}]
+  "history": [{"role": "user", "content": "Hi"}]
 }
 ```
 
-## Architecture
+## Project Structure
 
 - `app/model.py`: mode configs + tiny transformer reasoner for intent shaping.
 - `app/main.py`: FastAPI server + chat endpoint.
