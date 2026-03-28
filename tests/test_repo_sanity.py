@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class RepoSanityTests(unittest.TestCase):
     def test_no_merge_conflict_markers_in_key_files(self) -> None:
         target_files = [
-            ROOT / "README.md",
+            ROOT / "readme.txt",
             ROOT / "static" / "app.js",
             ROOT / "static" / "styles.css",
             ROOT / "templates" / "index.html",
