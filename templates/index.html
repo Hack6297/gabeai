@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GabeAI 1.0</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>GabeAI 1.0</h1>
+        <p>Three-mode assistant: Lite, Plus, and Pro.</p>
+      </header>
+
+      <section class="controls">
+        <label for="mode">Mode</label>
+        <select id="mode">
+          <option value="lite">Lite (Haiku-level style)</option>
+          <option value="plus" selected>Plus (Sonnet-level style)</option>
+          <option value="pro">Pro (Opus-level style)</option>
+        </select>
+      </section>
+
+      <section class="controls">
+        <label for="api-base">API Base</label>
+        <input id="api-base" type="text" placeholder="http://127.0.0.1:8000" />
+      </section>
+
+      <p id="banner" class="banner" hidden></p>
+
+      <section id="chat" class="chat"></section>
+
+      <form id="chat-form" class="composer">
+        <textarea id="message" placeholder="Ask GabeAI anything..." required></textarea>
+        <div class="buttons">
+          <button type="submit">Send</button>
+          <button type="button" id="clear-chat" class="ghost">Clear</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="../static/app.js"></script>
+  </body>
+</html>
