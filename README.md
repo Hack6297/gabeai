@@ -61,3 +61,23 @@ use either the recommended server URL (`http://127.0.0.1:8000`) or ensure the re
 python -m unittest discover -s tests
 python -m compileall app static templates
 ```
+
+## Merge conflict helper
+
+If a PR reports multiple conflicts, use the helper script:
+
+```bash
+# choose one strategy
+scripts/resolve_conflicts.sh ours
+scripts/resolve_conflicts.sh theirs
+```
+
+Then run checks and commit:
+
+```bash
+python -m unittest discover -s tests
+python -m compileall app static templates
+git commit
+```
+
+This repo also includes `.gitattributes` entries using `merge=union` for markdown/html/js/css to reduce trivial text conflicts.

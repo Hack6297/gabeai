@@ -1,0 +1,5 @@
+# Reduce trivial text merge conflicts in docs and frontend scaffolding files.
+*.md merge=union
+*.js merge=union
+*.css merge=union
+*.html merge=union

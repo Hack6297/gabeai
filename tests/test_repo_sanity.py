@@ -28,6 +28,12 @@ class RepoSanityTests(unittest.TestCase):
         self.assertTrue((ROOT / "static" / "styles.css").exists())
         self.assertTrue((ROOT / "static" / "app.js").exists())
 
+    def test_conflict_tooling_exists(self) -> None:
+        gitattributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+        self.assertIn("*.md merge=union", gitattributes)
+        self.assertIn("*.html merge=union", gitattributes)
+        self.assertTrue((ROOT / "scripts" / "resolve_conflicts.sh").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
